@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import lombok.Builder;
+
+@Builder
 @Entity 
 public class Voyageur implements Serializable{
 
@@ -50,6 +53,13 @@ public class Voyageur implements Serializable{
 
 	public Voyageur() {
 		super();
+	}
+
+	public Voyageur(Long idVoyageur, String nomVoyageur, List<Voyage> mesvoyages) {
+		super();
+		this.idVoyageur = idVoyageur;
+		this.nomVoyageur = nomVoyageur;
+		this.mesvoyages = mesvoyages;
 	}
 	
 	
