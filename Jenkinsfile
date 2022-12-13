@@ -13,12 +13,7 @@ pipeline {
                 
             }
         }
-         stage('test') {
-            steps {
-                sh 'mvn test'
-                echo 'testing'
-            }
-        }
+        
         stage('sonar') {
             steps {
               sh 'mvn sonar:sonar -Dsonar.projectKey=devops -Dsonar.host.url=http://192.168.1.28:9000 -Dsonar.login=ca4243aafb69466dbb09290b70be926c80936cb8'
